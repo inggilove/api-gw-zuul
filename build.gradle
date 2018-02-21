@@ -27,11 +27,27 @@ configurations {
 	providedRuntime
 }
 
+ext {
+	springCloudVersion = 'Edgware.SR2'
+}
+
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
+		
+	// compile('org.springframework.cloud:spring-cloud-starter-eureka')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.springframework.cloud:spring-cloud-starter-hystrix-dashboard')
+	compile('org.springframework.cloud:spring-cloud-starter-turbine')
+	
 	compile('de.codecentric:spring-boot-admin-server:1.5.4')
 	compile('de.codecentric:spring-boot-admin-server-ui:1.5.4')
-
+	
 	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
 }
