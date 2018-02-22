@@ -1,0 +1,10 @@
+FROM frolvlad/alpine-oraclejdk8
+
+RUN mkdir -p /home/demo-gwadmin
+WORKDIR /home/demo-gwadmin
+
+ADD ./build/libs /home/demo-gwadmin
+
+EXPOSE 8001
+
+CMD java -jar ./Build-demo-gwadmin-0.0.1-SNAPSHOT.war
