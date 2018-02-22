@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 //@EnableTurbine
 @SpringBootApplication
 //@EnableAutoConfiguration
-@EnableAdminServer
+//@EnableAdminServer
 //@RestController
 public class DemoApigwAdminApplication {
 
